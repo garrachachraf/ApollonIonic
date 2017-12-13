@@ -1,3 +1,5 @@
+import { ArtworkPage } from './../pages/artwork/artwork';
+import { ShowroomsPage } from './../pages/showrooms/showrooms';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
@@ -14,6 +16,8 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { Artwork } from './shared/model/artwork.model';
+import { ArtworkService } from '../pages/artwork/artwork.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     HomePage,
     TabsPage,
-    LoginPage
+    LoginPage,
+    ShowroomsPage,
+    ArtworkPage
   ],
   imports: [
     BrowserModule,
@@ -37,14 +43,16 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     HomePage,
     TabsPage,
-    LoginPage
+    LoginPage,
+    ShowroomsPage,
+    ArtworkPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler,},
     {provide: HTTP_INTERCEPTORS,useClass: TokenInterceptor,multi: true},
-    AuthenticationService
+    AuthenticationService,
   ]
 })
 export class AppModule {}

@@ -14,6 +14,10 @@
 
 
 <ion-content padding>
+<div class="center">
+  <img src="../../assets/logo-apollon.png" alt="logo">
+</div>
+<div class="form" padding>
   <form (ngSubmit)="login()">
       <ion-item>
       <ion-label>Username</ion-label>
@@ -24,6 +28,6 @@
       <ion-input [(ngModel)]="userCredentials.password" type="password" name="key" ></ion-input>
      </ion-item>
     <button ion-button type="submit" block>login</button>
-
   </form>
+  </div>
 </ion-content>
