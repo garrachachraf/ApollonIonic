@@ -17,12 +17,20 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { Artwork } from './shared/model/artwork.model';
-import { ArtworkService } from '../pages/artwork/artwork.service';
 import { WishlistPage } from '../pages/wishlist/wishlist';
 import { WishlistProvider } from '../providers/wishlist/wishlist';
 import { ShowroomProvider } from '../providers/showroom/showroom';
 import { ShowroomListPage } from '../pages/showroom-list/showroom-list';
+import {LoginPageModule} from "../pages/login/login.module";
+import {ArtworkPageModule} from "../pages/artwork/artwork.module";
+import {ShowroomsPageModule} from "../pages/showrooms/showrooms.module";
+import {WishlistPageModule} from "../pages/wishlist/wishlist.module";
+import {ShowroomListPageModule} from "../pages/showroom-list/showroom-list.module";
+import {ShowroomDetailPageModule} from "../pages/showroom-detail/showroom-detail.module";
+import {AuthenticationComponent} from "./authentication/authentication.component";
+import {PageNotFoundComponent} from "./shared/not-found.component";
+import {FollowService} from "./user/follow/follow.service";
+import {FollowComponent} from "./user/follow/follow.component";
 
 @NgModule({
   declarations: [
@@ -31,18 +39,23 @@ import { ShowroomListPage } from '../pages/showroom-list/showroom-list';
     ContactPage,
     HomePage,
     TabsPage,
-    LoginPage,
-    ShowroomsPage,
-    ArtworkPage,
-    WishlistPage,
-    ShowroomListPage,
-    ShowroomDetailPage
+    PageNotFoundComponent,
+    AuthenticationComponent,
+    FollowComponent
+
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     HttpModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    LoginPageModule,
+    ArtworkPageModule,
+    ShowroomsPageModule,
+    WishlistPageModule,
+    ShowroomListPageModule,
+    ShowroomDetailPageModule,
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -65,7 +78,10 @@ import { ShowroomListPage } from '../pages/showroom-list/showroom-list';
     {provide: HTTP_INTERCEPTORS,useClass: TokenInterceptor,multi: true},
     AuthenticationService,
     WishlistProvider,
-    ShowroomProvider
+    ShowroomProvider,
+    FollowService,
+    AuthenticationService,
+
   ]
 })
 export class AppModule {}
