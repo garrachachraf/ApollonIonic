@@ -29,8 +29,7 @@ import {ShowroomListPageModule} from "../pages/showroom-list/showroom-list.modul
 import {ShowroomDetailPageModule} from "../pages/showroom-detail/showroom-detail.module";
 import {AuthenticationComponent} from "./authentication/authentication.component";
 import {PageNotFoundComponent} from "./shared/not-found.component";
-import {FollowService} from "./user/follow/follow.service";
-import {FollowComponent} from "./user/follow/follow.component";
+
 
 @NgModule({
   declarations: [
@@ -41,7 +40,7 @@ import {FollowComponent} from "./user/follow/follow.component";
     TabsPage,
     PageNotFoundComponent,
     AuthenticationComponent,
-    FollowComponent
+
 
   ],
   imports: [
@@ -79,7 +78,6 @@ import {FollowComponent} from "./user/follow/follow.component";
     AuthenticationService,
     WishlistProvider,
     ShowroomProvider,
-    FollowService,
     AuthenticationService,
 
   ]
