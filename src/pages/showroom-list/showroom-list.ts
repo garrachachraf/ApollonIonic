@@ -4,7 +4,7 @@ import { ShowroomProvider } from './../../providers/showroom/showroom';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Showroom } from '../../app/shared/model/showroom.model';
-
+import { SocialSharing } from '@ionic-native/social-sharing';
 /**
  * Generated class for the ShowroomListPage page.
  *
@@ -16,6 +16,7 @@ import { Showroom } from '../../app/shared/model/showroom.model';
 @Component({
   selector: 'page-showroom-list',
   templateUrl: 'showroom-list.html',
+  providers: [SocialSharing]
 })
 export class ShowroomListPage {
 
@@ -24,7 +25,8 @@ export class ShowroomListPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    private showroomProvider: ShowroomProvider
+    private showroomProvider: ShowroomProvider,
+    private socialSharing: SocialSharing
   ) {
   }
 
@@ -32,6 +34,16 @@ export class ShowroomListPage {
     this.showroomProvider.getAll()
     .subscribe(result => this.showrooms = result);
   }
+
+  shareFb(showroom: Showroom){
+
+    this.socialSharing.shareViaFacebook("Chechout this amazing showroom", showroom.artWorks[0].mediaPath, "test.com")
+      .then(()=>{
+        console.log("helo fb");
+        
+      })
+  }
+
 
   goTo(showroomId: number){
     this.navCtrl.push(ShowroomDetailPage,{id:showroomId});

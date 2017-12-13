@@ -1,6 +1,6 @@
 {
   "name": "ApollonIonic",
-  "app_id": "",
+  "app_id": "5d318a34",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}

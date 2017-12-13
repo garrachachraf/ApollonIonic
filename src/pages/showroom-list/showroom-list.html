@@ -17,6 +17,16 @@
   
     <ion-card *ngFor="let showroom of showrooms" (click)="goTo(showroom.id)">
       <img *ngIf="showroom.artWorks[0]" [src]="showroom.artWorks[0].mediaPath"/>
+      <ion-fab top right edge>
+        <button ion-fab mini><ion-icon name="add"></ion-icon></button>
+        <ion-fab-list>
+          <button ion-fab (click)="shareFb(showroom)"><ion-icon name="logo-facebook"></ion-icon></button>
+          <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
+          <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>
+          <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
+        </ion-fab-list>
+      </ion-fab>
+    
       <div class="card-title">{{showroom.title}}</div>
       <div class="card-subtitle">{{showroom.description}}</div>
     </ion-card>
