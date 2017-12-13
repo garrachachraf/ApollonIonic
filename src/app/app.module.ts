@@ -1,5 +1,6 @@
 import { ArtworkPage } from './../pages/artwork/artwork';
 import { ShowroomsPage } from './../pages/showrooms/showrooms';
+import { ShowroomDetailPage } from './../pages/showroom-detail/showroom-detail';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
@@ -18,6 +19,10 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Artwork } from './shared/model/artwork.model';
 import { ArtworkService } from '../pages/artwork/artwork.service';
+import { WishlistPage } from '../pages/wishlist/wishlist';
+import { WishlistProvider } from '../providers/wishlist/wishlist';
+import { ShowroomProvider } from '../providers/showroom/showroom';
+import { ShowroomListPage } from '../pages/showroom-list/showroom-list';
 
 @NgModule({
   declarations: [
@@ -28,7 +33,10 @@ import { ArtworkService } from '../pages/artwork/artwork.service';
     TabsPage,
     LoginPage,
     ShowroomsPage,
-    ArtworkPage
+    ArtworkPage,
+    WishlistPage,
+    ShowroomListPage,
+    ShowroomDetailPage
   ],
   imports: [
     BrowserModule,
@@ -45,7 +53,10 @@ import { ArtworkService } from '../pages/artwork/artwork.service';
     TabsPage,
     LoginPage,
     ShowroomsPage,
-    ArtworkPage
+    ArtworkPage,
+    WishlistPage,
+    ShowroomListPage,
+    ShowroomDetailPage
   ],
   providers: [
     StatusBar,
@@ -53,6 +64,8 @@ import { ArtworkService } from '../pages/artwork/artwork.service';
     {provide: ErrorHandler, useClass: IonicErrorHandler,},
     {provide: HTTP_INTERCEPTORS,useClass: TokenInterceptor,multi: true},
     AuthenticationService,
+    WishlistProvider,
+    ShowroomProvider
   ]
 })
 export class AppModule {}
