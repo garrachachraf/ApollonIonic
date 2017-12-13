@@ -1,3 +1,5 @@
+import { ShowroomListPage } from './../showroom-list/showroom-list';
+import { WishlistPage } from './../wishlist/wishlist';
 import { Component } from '@angular/core';
 
 import { AboutPage } from '../about/about';
@@ -9,9 +11,10 @@ import { HomePage } from '../home/home';
 })
 export class TabsPage {
 
-  tab1Root = HomePage;
+  tab1Root = ShowroomListPage;
   tab2Root = AboutPage;
   tab3Root = ContactPage;
+  tab4Root = WishlistPage;
 
   constructor() {
 

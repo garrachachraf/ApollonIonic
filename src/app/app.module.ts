@@ -1,3 +1,4 @@
+import { ShowroomDetailPage } from './../pages/showroom-detail/showroom-detail';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
@@ -14,6 +15,10 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { WishlistPage } from '../pages/wishlist/wishlist';
+import { WishlistProvider } from '../providers/wishlist/wishlist';
+import { ShowroomProvider } from '../providers/showroom/showroom';
+import { ShowroomListPage } from '../pages/showroom-list/showroom-list';
 
 @NgModule({
   declarations: [
@@ -22,7 +27,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     HomePage,
     TabsPage,
-    LoginPage
+    LoginPage,
+    WishlistPage,
+    ShowroomListPage,
+    ShowroomDetailPage
   ],
   imports: [
     BrowserModule,
@@ -37,14 +45,19 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     HomePage,
     TabsPage,
-    LoginPage
+    LoginPage,
+    WishlistPage,
+    ShowroomListPage,
+    ShowroomDetailPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler,},
     {provide: HTTP_INTERCEPTORS,useClass: TokenInterceptor,multi: true},
-    AuthenticationService
+    AuthenticationService,
+    WishlistProvider,
+    ShowroomProvider
   ]
 })
 export class AppModule {}
