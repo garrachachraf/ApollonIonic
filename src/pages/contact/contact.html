@@ -5,44 +5,80 @@
     </ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content>
+<ion-content class="has-header profile" overflow-scroll="true" padding="true">
 
-  <div class="dashboard-main-container animated bounceInDown">
-    <h3>D<span class="thin">esh</span> <b>A</b>tom</h3>
-    <div class="avatar-conatainer">
-      <span class="badge">Artist</span>
-      <i class="badge-notify"></i>
-      <img ng-src="../assets/max.png">
+  <div class="content">
+    <div class="head-profile">
+      <ul class="table-view">
+        <li class="table-view-cell media text-center">
+          <div class="user-photo-frame">
+            <img src="{{ user.imagePath }}" class="user-photo" alt=""/>
+          </div>
+          <h4>{{ user.firstname | titlecase }} {{ user.lastname | titlecase }} <img alt="{{ user.country }}" src="/assets/imgs/country/{{user.country}}.png"> </h4>
+          <a href="#" class="btn btn-outlined">FOLLOW</a>
+        </li>
+        <li class="table-view-cell media text-center no-padding backdrop-background">
+          <section class="social-panel">
+            <div class="social-info backdrop-background-6">
+              <h3>481</h3>
+              <p>Followers</p>
+            </div>
+            <div class="social-info backdrop-background-5">
+              <h3>96</h3>
+              <p>Following</p>
+            </div>
+            <div class="social-info backdrop-background-4">
+              <h3>391</h3>
+              <p>Showrooms</p>
+            </div>
+            <div class="social-info">
+              <h3>82</h3>
+              <p>ArtWorks</p>
+            </div>
+          </section>
+        </li>
+      </ul>
     </div>
-
-    <ion-slides >
-
+    <ion-slides class="social-info " >
       <ion-slide>
-        <div class="box box-blue">
-          <h4><b>Real</b>Time Noti<span class="thin">fication</span></h4>
-          <p><b>G</b>et the <b>V</b>ery <span class="thin">late</span>st on the <b>thing</b>s you <br /> <b>C</b>are about most</p>
+        <div class="box ">
+          <h4><span class="thin"><b>Thomas Merton</b></span></h4>
+
+          <p>
+            “<b>Art</b> enables us to find ourselves and lose ourselves at the same time.”
+          </p>
         </div>
       </ion-slide>
 
 
       <ion-slide>
         <div class="box">
-          <h4 class="thin">A <b>Free</b>Lancer</h4>
-          <p><b>D</b>esh <b>A</b>tom is FreeLance <span class="thin">Software Enginer</span>. <br />He Love<span class="thin">s Mob</span>ile Apps </p>
+          <h4 class="thin"><b>Edgar Degas</b></h4>
+          <p>“<b>Painting</b> is easy when you don’t know how, but very difficult when you do” </p>
         </div>
       </ion-slide>
 
       <ion-slide>
         <div class="box">
-          <h4>Market <b>Your</b>self</h4>
-          <p>Let Others <b>Know</b> Who You are with a <br /><b>Person</b>a<span class="thin">lized</span> profile</p>
+          <h4>Calvin & Hobbes</h4>
+          <p>“As my artist’s statement explains, my work is utterly incomprehensible and is therefore full of deep significance”</p>
         </div>
       </ion-slide>
-
     </ion-slides>
-
+    <section id="photos">
+      <img src="assets/imgs/profile/people.png" />
+      <img src="assets/imgs/profile/puppy.png" />
+      <img src="assets/imgs/profile/white-pup.png" />
+      <img src="assets/imgs/profile/on_a_boat.png" />
+      <img src="assets/imgs/profile/dog.png" />
+      <img src="assets/imgs/profile/in-nature.png" />
+      <img src="assets/imgs/profile/hat.png" />
+      <img src="assets/imgs/profile/forest.png" />
+      <img src="assets/imgs/profile/drinks.png" />
+      <img src="assets/imgs/profile/drinking.png" />
+      <img src="assets/imgs/profile/leaf.png" />
+      <img src="assets/imgs/profile/strawberries.png" />
+    </section>
   </div>
-
-
 
 </ion-content>

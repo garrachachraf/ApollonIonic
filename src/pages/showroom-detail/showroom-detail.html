@@ -14,11 +14,11 @@
 
 
 <ion-content *ngIf="showroom" class="card-background-page" padding>
-  
-    <ion-card *ngFor="let artwork of showroom.artWorks" (click)="goTo(showroom.id)">
+
+    <ion-card *ngFor="let artwork of showroom.artWorks" >
       <img  [src]="artwork.mediaPath"/>
       <div class="card-title">{{artwork.title}}</div>
       <div class="card-subtitle">{{artwork.artist.userName}}</div>
     </ion-card>
-  
+
 </ion-content>
