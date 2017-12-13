@@ -33,6 +33,7 @@ import {FollowService} from "./user/follow/follow.service";
 import {FollowComponent} from "./user/follow/follow.component";
 import {ShowroomService} from "../pages/showrooms/shared/showroom.service";
 
+
 @NgModule({
   declarations: [
     MyApp,
@@ -42,6 +43,7 @@ import {ShowroomService} from "../pages/showrooms/shared/showroom.service";
     TabsPage,
     PageNotFoundComponent,
     AuthenticationComponent
+
 
 
   ],
