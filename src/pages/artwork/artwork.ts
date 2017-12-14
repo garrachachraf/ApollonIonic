@@ -46,7 +46,7 @@ export class ArtworkPage {
 
   ionViewDidLoad() {
     this.artworkService.getOne(this.parameter1).subscribe(res => {
-      console.log("7amma ia3tik 3asba");
+      console.log("7ammatik");
       this.artwork = res;
       console.log(this.artwork);
     });
@@ -58,9 +58,10 @@ export class ArtworkPage {
       this.isAuthenticated = isAuthenticated;
     });
     this.artworkService.getOne(this.parameter1).subscribe(res => {
-      console.log("7amma ia3tik 3asba");
+      console.log("7ammatik");
       this.artwork = res;
       console.log(this.artwork);
     });
   }
+
 }

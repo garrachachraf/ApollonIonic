@@ -29,6 +29,7 @@ import {ShowroomListPageModule} from "../pages/showroom-list/showroom-list.modul
 import {ShowroomDetailPageModule} from "../pages/showroom-detail/showroom-detail.module";
 import {AuthenticationComponent} from "./authentication/authentication.component";
 import {PageNotFoundComponent} from "./shared/not-found.component";
+import { EventPage } from '../pages/event/event';
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import {PageNotFoundComponent} from "./shared/not-found.component";
     TabsPage,
     PageNotFoundComponent,
     AuthenticationComponent,
+    EventPage
 
 
   ],
@@ -68,7 +70,8 @@ import {PageNotFoundComponent} from "./shared/not-found.component";
     ArtworkPage,
     WishlistPage,
     ShowroomListPage,
-    ShowroomDetailPage
+    ShowroomDetailPage,
+    EventPage
   ],
   providers: [
     StatusBar,

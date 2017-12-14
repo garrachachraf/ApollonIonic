@@ -1,0 +1,41 @@
+<!--
+  Generated template for the EventPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Events</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+      <ion-content class="has-header" overflow-scroll="true" padding="true" class="photo-list">
+
+        
+        <div *ngFor="let ev of events">
+        <ion-card class="content">
+          <ul class="table-view">
+            <li class="table-view-cell media">
+              <img class="media-object pull-left" src="https://api.mapbox.com/styles/v1/mapbox/streets-v10/static/geojson(%7B%22type%22%3A%22Point%22%2C%22coordinates%22%3A[{{ ev.gallery.location.latitude }}%2C{{ ev.gallery.location.longitude }}]%7D)/{{ ev.gallery.location.latitude }},{{ ev.gallery.location.longitude }},14.25,0,60/350x200?access_token=pk.eyJ1IjoiZ2FycmFjaCIsImEiOiJjajk1bjdmM2MxemgzMzJwNnNhYmN2bnRqIn0.Q35bIooJvU6SA0soVSaN8w"
+                alt="Position">
+              <div class="media-body">
+                <p>{{ ev.gallery.location.address }}</p>
+                <ion-card-title>{{ev.title}}</ion-card-title>
+                <p>{{ ev.description }}</p>
+                <p>Hosted By{{ ev.user.firstname }} {{ ev.user.lastname }}</p>
+                <p>Capacity : {{ ev.capacity}}</p>
+              </div>
+            </li>
+          </ul>
+        </ion-card>
+        </div>
+
+      </ion-content>
+
+</ion-content>
