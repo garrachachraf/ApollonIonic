@@ -30,6 +30,9 @@ import {ShowroomDetailPageModule} from "../pages/showroom-detail/showroom-detail
 import {AuthenticationComponent} from "./authentication/authentication.component";
 import {PageNotFoundComponent} from "./shared/not-found.component";
 import { EventPage } from '../pages/event/event';
+import {FollowService} from "../user/follow/follow.service";
+import {FollowComponent} from "./user/follow/follow.component";
+import {ShowroomService} from "../pages/showrooms/shared/showroom.service";
 
 
 @NgModule({
@@ -81,6 +84,8 @@ import { EventPage } from '../pages/event/event';
     AuthenticationService,
     WishlistProvider,
     ShowroomProvider,
+    ShowroomService,
+    FollowService,
     AuthenticationService,
 
   ]
