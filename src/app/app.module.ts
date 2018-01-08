@@ -30,10 +30,15 @@ import {ShowroomDetailPageModule} from "../pages/showroom-detail/showroom-detail
 import {AuthenticationComponent} from "./authentication/authentication.component";
 import {PageNotFoundComponent} from "./shared/not-found.component";
 import { EventPage } from '../pages/event/event';
-import {FollowService} from "../user/follow/follow.service";
-import {FollowComponent} from "./user/follow/follow.component";
+//import {FollowService} from "../user/follow/follow.service";
+//import {FollowComponent} from "./user/follow/follow.component";
 import {ShowroomService} from "../pages/showrooms/shared/showroom.service";
-
+import { AgmCoreModule } from '@agm/core';
+import {Keyboard} from '@ionic-native/keyboard';
+import {GalleriesPage} from "../pages/galleries/galleries"
+import {AutocompleteModalPage} from "../pages/autocomplete-modal/autocomplete-modal"
+import {PrettyJsonModule} from 'angular2-prettyjson';
+import {GalleryProvider} from "../providers/galleries/galleries";
 
 @NgModule({
   declarations: [
@@ -44,7 +49,9 @@ import {ShowroomService} from "../pages/showrooms/shared/showroom.service";
     TabsPage,
     PageNotFoundComponent,
     AuthenticationComponent,
-    EventPage
+    EventPage,
+    AutocompleteModalPage,
+    GalleriesPage
 
 
   ],
@@ -59,7 +66,11 @@ import {ShowroomService} from "../pages/showrooms/shared/showroom.service";
     WishlistPageModule,
     ShowroomListPageModule,
     ShowroomDetailPageModule,
-
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDxzZBbmKANs1lD8-rwULOgKGcXjkK7jTs',
+      libraries: ['places']
+    }),
+    PrettyJsonModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -74,20 +85,23 @@ import {ShowroomService} from "../pages/showrooms/shared/showroom.service";
     WishlistPage,
     ShowroomListPage,
     ShowroomDetailPage,
-    EventPage
+    EventPage,
+    GalleriesPage,
+    AutocompleteModalPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    Keyboard,
     {provide: ErrorHandler, useClass: IonicErrorHandler,},
     {provide: HTTP_INTERCEPTORS,useClass: TokenInterceptor,multi: true},
     AuthenticationService,
     WishlistProvider,
     ShowroomProvider,
     ShowroomService,
-    FollowService,
+   // FollowService,
     AuthenticationService,
-
+    GalleryProvider
   ]
 })
 export class AppModule {}
